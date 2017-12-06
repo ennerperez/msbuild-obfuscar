@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Obfuscator>
+  <Var name="InPath" value="bin\Release" />
+  <Var name="OutPath" value="$(InPath)\obfuscated" />  
+  <Var name="HidePrivateApi" value="true" />
+  <Module file="$(InPath)\MSBuild.Obfuscar.Test.exe" />
+</Obfuscator>
