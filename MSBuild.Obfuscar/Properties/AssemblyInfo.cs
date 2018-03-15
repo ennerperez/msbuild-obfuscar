@@ -14,6 +14,6 @@ using System.Resources;
 [assembly: AssemblyProduct("MSBuild.Obfuscar")]
 [assembly: AssemblyCopyright("Copyright (C) LeXtudio 2015")]
 
-[assembly: AssemblyVersion("2.2.10.*")]
-[assembly: AssemblyFileVersion("2.2.10.0")]
+[assembly: AssemblyVersion("2.2.11.*")]
+[assembly: AssemblyFileVersion("2.2.11.0")]
 [assembly: NeutralResourcesLanguage("en")]

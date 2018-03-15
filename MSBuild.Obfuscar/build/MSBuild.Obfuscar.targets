@@ -14,8 +14,8 @@ WARNING:  DO NOT MODIFY this file unless you are knowledgeable about MSBuild and
   <PropertyGroup>
 
     <!-- ObfuscatorToolsPath -->
-    <ObfuscatorToolsPath>$(MSBuildThisFileDirectory)..\..\Obfuscar.2.2.10\tools</ObfuscatorToolsPath>
-    <ObfuscatorToolsPath Condition="!Exists('$(ObfuscatorToolsPath)')">$(SolutionDir)packages\Obfuscar.2.2.10\tools</ObfuscatorToolsPath>
+    <ObfuscatorToolsPath>$(MSBuildThisFileDirectory)..\..\Obfuscar.2.2.11\tools</ObfuscatorToolsPath>
+    <ObfuscatorToolsPath Condition="!Exists('$(ObfuscatorToolsPath)')">$(SolutionDir)packages\Obfuscar.2.2.11\tools</ObfuscatorToolsPath>
 
   </PropertyGroup>
 
