@@ -14,9 +14,8 @@ WARNING:  DO NOT MODIFY this file unless you are knowledgeable about MSBuild and
   <PropertyGroup>
 
     <!-- ObfuscatorToolsPath -->
-    <ObfuscatorToolsPath>$(MSBuildThisFileDirectory)..\..\Obfuscar.2.2.10\tools</ObfuscatorToolsPath>
-    <ObfuscatorToolsPath Condition="!Exists('$(ObfuscatorToolsPath)')">$(SolutionDir)packages\Obfuscar.2.2.10\tools</ObfuscatorToolsPath>
-
+    <ObfuscatorToolsPath>$(MSBuildThisFileDirectory)..\..\Obfuscar.2.2.11\tools</ObfuscatorToolsPath>
+    <ObfuscatorToolsPath Condition="!Exists('$(ObfuscatorToolsPath)')">$(SolutionDir)packages\Obfuscar.2.2.11\tools</ObfuscatorToolsPath>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -37,10 +36,9 @@ WARNING:  DO NOT MODIFY this file unless you are knowledgeable about MSBuild and
 
     <ProjectFileName Condition=" '$(OS)' != 'Windows_NT' ">$(ProjectDir)$(ProjectName).xml</ProjectFileName>
     <ProjectFileName Condition=" '$(OS)' != 'Windows_NT' AND !Exists('$(ProjectFileName)')">$(ProjectDir)Obfuscar.xml</ProjectFileName>
-    
+
     <!-- Commands -->
     <ObfuscateCommand>$(ObfuscatorCommand) "$(ProjectFileName)"</ObfuscateCommand>
-
   </PropertyGroup>
 
   <Target Name="CheckPrerequisites">
@@ -48,14 +46,13 @@ WARNING:  DO NOT MODIFY this file unless you are knowledgeable about MSBuild and
     <Error Condition="'$(DownloadObfuscatorExe)' != 'true' AND !Exists('$(ObfuscatorExePath)')" Text="Unable to locate '$(ObfuscatorExePath)'" />
   </Target>
 
-  <Target Name="Obfuscator" AfterTargets="AfterBuild" DependsOnTargets="CheckPrerequisites" Condition="Exists('$(ProjectFileName)') and '$(ConfigurationName)' == 'Release'" >
-    <MakeDir Directories="$(TargetDir)obfuscated"/>
+  <Target Name="Obfuscator" AfterTargets="AfterBuild" DependsOnTargets="CheckPrerequisites" Condition="Exists('$(ProjectFileName)') and '$(ConfigurationName)' == 'Release'">
+    <MakeDir Directories="$(TargetDir)obfuscated" />
     <Exec WorkingDirectory="$(ProjectDir)" Command="$(ObfuscateCommand)" />
     <ItemGroup>
-      <FilesToMove Include="$(TargetDir)obfuscated\*.*"/>
+      <FilesToMove Include="$(TargetDir)obfuscated\*.*" />
     </ItemGroup>
     <Move SourceFiles="@(FilesToMove)" DestinationFolder="$(TargetDir)" OverwriteReadOnlyFiles="true" Condition=" '$(OS)' == 'Windows_NT'" />
     <RemoveDir Directories="$(TargetDir)obfuscated" Condition=" '$(OS)' == 'Windows_NT'" />
   </Target>
-  
 </Project>
