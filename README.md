@@ -3,7 +3,7 @@ MSBuild.Obfuscar
 MSBuild.Obfuscar is a target for Obfuscar integration in MSBuild process.
 
 [![Build status](https://ci.appveyor.com/api/projects/status/qn2xlop7orro4wlp?svg=true)](https://ci.appveyor.com/project/ennerperez/msbuild-obfuscar)
-[![NuGet](https://img.shields.io/nuget/v/Nuget.Core.svg)](https://www.nuget.org/packages/MSBuild.Obfuscar/)
+[![NuGet](https://img.shields.io/nuget/v/MSBuild.Obfuscar.svg)](https://www.nuget.org/packages/MSBuild.Obfuscar/)
 
 Obfuscar
 ========

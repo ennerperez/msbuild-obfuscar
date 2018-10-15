@@ -6,15 +6,15 @@
     <title>$id$</title>
     <authors>Enner Pérez</authors>
     <owners>Enner Pérez</owners>
-    <licenseUrl>https://raw.githubusercontent.com/lextm/obfuscar/master/LICENSE</licenseUrl>
-    <projectUrl>https://nuget.org/packages/Obfuscar.Targets</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/lextm/obfuscar/master/Potion-icon.png</iconUrl>
+    <licenseUrl>https://github.com/ennerperez/msbuild-obfuscar/tree/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/ennerperez/msbuild-obfuscar</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/ennerperez/msbuild-obfuscar/master/.editoricon.png</iconUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <developmentDependency>true</developmentDependency>
-    <description>Build targets interface of Obfuscar</description>
+    <description>Build targets interface for Obfuscar</description>
     <summary>$description$</summary>
     <releaseNotes>
-      Includes 'Obfuscar' v2.2.2.13 in a solution-level NuGet package
+      Includes 'Obfuscar' v2.2.13 in a solution-level NuGet package
     </releaseNotes>
     <copyright>$copyright$</copyright>
     <language>en</language>

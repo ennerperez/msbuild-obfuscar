@@ -1,4 +1,4 @@
-using System.Reflection;
+﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Resources;
@@ -10,9 +10,9 @@ using System.Resources;
 #else
 [assembly: AssemblyConfiguration("RELEASE")]
 #endif
-[assembly: AssemblyCompany("LeXtudio")]
+[assembly: AssemblyCompany("Enner Pérez")]
 [assembly: AssemblyProduct("MSBuild.Obfuscar")]
-[assembly: AssemblyCopyright("Copyright (C) LeXtudio 2015")]
-[assembly: AssemblyVersion("2.2.13.*")]
-[assembly: AssemblyFileVersion("2.2.13.0")]
+[assembly: AssemblyCopyright("Copyright (C) Enner Pérez 2018")]
+[assembly: AssemblyVersion("2.2.14.*")]
+[assembly: AssemblyFileVersion("2.2.14.0")]
 [assembly: NeutralResourcesLanguage("en")]
