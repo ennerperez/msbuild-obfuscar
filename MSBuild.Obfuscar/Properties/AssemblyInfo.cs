@@ -14,5 +14,5 @@ using System.Resources;
 [assembly: AssemblyProduct("MSBuild.Obfuscar")]
 [assembly: AssemblyCopyright("Copyright (C) Enner Pérez 2018")]
 [assembly: AssemblyVersion("2.2.14.*")]
-[assembly: AssemblyFileVersion("2.2.14.0")]
+[assembly: AssemblyFileVersion("2.2.14")]
 [assembly: NeutralResourcesLanguage("en")]
