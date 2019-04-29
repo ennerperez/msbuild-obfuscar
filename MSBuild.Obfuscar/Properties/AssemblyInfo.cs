@@ -12,7 +12,7 @@ using System.Resources;
 #endif
 [assembly: AssemblyCompany("Enner Pérez")]
 [assembly: AssemblyProduct("MSBuild.Obfuscar")]
-[assembly: AssemblyCopyright("Copyright (C) Enner Pérez 2018")]
-[assembly: AssemblyVersion("2.2.14.*")]
-[assembly: AssemblyFileVersion("2.2.14")]
+[assembly: AssemblyCopyright("Copyright (C) Enner Pérez 2019")]
+[assembly: AssemblyVersion("2.2.18.*")]
+[assembly: AssemblyFileVersion("2.2.18")]
 [assembly: NeutralResourcesLanguage("en")]
