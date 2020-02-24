@@ -14,11 +14,11 @@ WARNING:  DO NOT MODIFY this file unless you are knowledgeable about MSBuild and
   <PropertyGroup>
 
     <!-- ObfuscatorToolsPath -->
-    <ObfuscatorToolsPath Condition="'$(NuGetProjectStyle)' == 'PackageReference'">$(MSBuildThisFileDirectory)..\..\..\Obfuscar.2.2.18\tools</ObfuscatorToolsPath>
-    <ObfuscatorToolsPath Condition="'$(NuGetProjectStyle)' == 'PackageReference' And !Exists('$(ObfuscatorToolsPath)')">$(NuGetPackageRoot)Obfuscar.2.2.18\tools</ObfuscatorToolsPath>
+    <ObfuscatorToolsPath Condition="'$(NuGetProjectStyle)' == 'PackageReference'">$(MSBuildThisFileDirectory)..\..\..\Obfuscar.2.2.25\tools</ObfuscatorToolsPath>
+    <ObfuscatorToolsPath Condition="'$(NuGetProjectStyle)' == 'PackageReference' And !Exists('$(ObfuscatorToolsPath)')">$(NuGetPackageRoot)Obfuscar.2.2.25\tools</ObfuscatorToolsPath>
 
-    <ObfuscatorToolsPath Condition="'$(NuGetProjectStyle)' != 'PackageReference'">$(MSBuildThisFileDirectory)..\..\Obfuscar.2.2.18\tools</ObfuscatorToolsPath>
-    <ObfuscatorToolsPath Condition="'$(NuGetProjectStyle)' != 'PackageReference' And !Exists('$(ObfuscatorToolsPath)')">$(SolutionDir)packages\Obfuscar.2.2.18\tools</ObfuscatorToolsPath>
+    <ObfuscatorToolsPath Condition="'$(NuGetProjectStyle)' != 'PackageReference'">$(MSBuildThisFileDirectory)..\..\Obfuscar.2.2.25\tools</ObfuscatorToolsPath>
+    <ObfuscatorToolsPath Condition="'$(NuGetProjectStyle)' != 'PackageReference' And !Exists('$(ObfuscatorToolsPath)')">$(SolutionDir)packages\Obfuscar.2.2.25\tools</ObfuscatorToolsPath>
   </PropertyGroup>
 
   <PropertyGroup>
