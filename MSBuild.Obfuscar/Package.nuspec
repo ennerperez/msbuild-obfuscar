@@ -14,13 +14,13 @@
     <description>Build targets interface for Obfuscar</description>
     <summary>$description$</summary>
     <releaseNotes>
-      Includes 'Obfuscar' v2.2.18 in a solution-level NuGet package
+      Includes 'Obfuscar' v2.2.25 in a solution-level NuGet package
     </releaseNotes>
     <copyright>$copyright$</copyright>
     <language>en</language>
     <tags>Obfuscar MSBuild Targets</tags>
     <dependencies>
-      <dependency id="Obfuscar" version="2.2.18" />
+      <dependency id="Obfuscar" version="2.2.25" />
     </dependencies>
   </metadata>
   <files>

@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".files", ".files", "{5A49A8
 		LICENSE = LICENSE
 		README.md = README.md
 		VERSION = VERSION
+		.gitignore = .gitignore
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{0ABA6FF9-E5EC-4550-B80A-09B8EA69C797}"
