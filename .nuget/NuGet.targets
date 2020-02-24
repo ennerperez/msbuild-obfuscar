@@ -101,7 +101,7 @@
     </BuildDependsOn>
   </PropertyGroup>
 
-  <Target Name="CheckPrerequisites" Condition=" '$(OS)' == 'Windows_NT'">
+  <Target Name="CheckPrerequisites" >
     <!-- Raise an error if we're unable to locate nuget.exe  -->
     <Error Condition="'$(DownloadNuGetExe)' != 'true' AND !Exists('$(NuGetExePath)')" Text="Unable to locate '$(NuGetExePath)'" />
     <!--
@@ -152,7 +152,7 @@
 
                     Log.LogMessage("Downloading latest version of NuGet.exe...");
                     WebClient webClient = new WebClient();
-                    webClient.DownloadFile("https://www.nuget.org/nuget.exe", OutputFilename);
+                    webClient.DownloadFile("https://dist.nuget.org/win-x86-commandline/latest/nuget.exe", OutputFilename);
 
                     return true;
                 }
