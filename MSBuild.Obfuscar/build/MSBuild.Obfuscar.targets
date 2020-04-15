@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
 ***********************************************************************************************
 MSBuild.Obfuscator.targets
@@ -14,11 +14,11 @@ WARNING:  DO NOT MODIFY this file unless you are knowledgeable about MSBuild and
   <PropertyGroup>
 
     <!-- ObfuscatorToolsPath -->
-    <ObfuscatorToolsPath Condition="'$(NuGetProjectStyle)' == 'PackageReference'">$(MSBuildThisFileDirectory)..\..\..\Obfuscar.2.2.25\tools</ObfuscatorToolsPath>
-    <ObfuscatorToolsPath Condition="'$(NuGetProjectStyle)' == 'PackageReference' And !Exists('$(ObfuscatorToolsPath)')">$(NuGetPackageRoot)Obfuscar.2.2.25\tools</ObfuscatorToolsPath>
+    <ObfuscatorToolsPath Condition="'$(NuGetProjectStyle)' == 'PackageReference'">$(MSBuildThisFileDirectory)..\..\..\Obfuscar.2.2.26\tools</ObfuscatorToolsPath>
+    <ObfuscatorToolsPath Condition="'$(NuGetProjectStyle)' == 'PackageReference' And !Exists('$(ObfuscatorToolsPath)')">$(NuGetPackageRoot)Obfuscar.2.2.26\tools</ObfuscatorToolsPath>
 
-    <ObfuscatorToolsPath Condition="'$(NuGetProjectStyle)' != 'PackageReference'">$(MSBuildThisFileDirectory)..\..\Obfuscar.2.2.25\tools</ObfuscatorToolsPath>
-    <ObfuscatorToolsPath Condition="'$(NuGetProjectStyle)' != 'PackageReference' And !Exists('$(ObfuscatorToolsPath)')">$(SolutionDir)packages\Obfuscar.2.2.25\tools</ObfuscatorToolsPath>
+    <ObfuscatorToolsPath Condition="'$(NuGetProjectStyle)' != 'PackageReference'">$(MSBuildThisFileDirectory)..\..\Obfuscar.2.2.26\tools</ObfuscatorToolsPath>
+    <ObfuscatorToolsPath Condition="'$(NuGetProjectStyle)' != 'PackageReference' And !Exists('$(ObfuscatorToolsPath)')">$(SolutionDir)packages\Obfuscar.2.2.26\tools</ObfuscatorToolsPath>
   </PropertyGroup>
 
   <PropertyGroup>
