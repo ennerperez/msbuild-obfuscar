@@ -27,7 +27,7 @@ WARNING:  DO NOT MODIFY this file unless you are knowledgeable about MSBuild and
     <ObfuscatorExePath Condition=" '$(ObfuscatorExePath)' == '' ">$(ObfuscatorToolsPath)\Obfuscar.Console.exe</ObfuscatorExePath>
 
     <ObfuscatorCommand Condition=" '$(OS)' == 'Windows_NT'">"$(ObfuscatorExePath)"</ObfuscatorCommand>
-    <ObfuscatorCommand Condition=" '$(OS)' != 'Windows_NT' ">mono --runtime=v4.0.30319 "$(ObfuscatorExePath)"</ObfuscatorCommand>
+    <ObfuscatorCommand Condition=" '$(OS)' != 'Windows_NT' ">mono "$(ObfuscatorExePath)"</ObfuscatorCommand>
 
     <!-- PaddedSolutionDir -->
     <PaddedSolutionDir Condition=" '$(OS)' == 'Windows_NT'">"$(SolutionDir) "</PaddedSolutionDir>
