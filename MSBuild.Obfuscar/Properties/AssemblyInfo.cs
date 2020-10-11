@@ -13,6 +13,6 @@ using System.Resources;
 [assembly: AssemblyCompany("Enner Pérez")]
 [assembly: AssemblyProduct("MSBuild.Obfuscar")]
 [assembly: AssemblyCopyright("Copyright (C) 2020")]
-[assembly: AssemblyVersion("2.2.26.*")]
-[assembly: AssemblyFileVersion("2.2.26")]
+[assembly: AssemblyVersion("2.2.28.*")]
+[assembly: AssemblyFileVersion("2.2.28")]
 [assembly: NeutralResourcesLanguage("en")]
