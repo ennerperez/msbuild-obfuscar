@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Obfuscator>
+  <!-- https://docs.obfuscar.com/getting-started/configuration.html -->
+  <Var name="InPath" value="bin/Release/netcoreapp3.1" />
+  <Var name="OutPath" value="$(InPath)/obfuscated" />
+  <Var name="KeepPublicApi" value="false" />
+  <Var name="HidePrivateApi" value="true" />
+  <Var name="HideStrings" value="true" />
+  <Var name="UseUnicodeNames" value="true" />
+  <Module file="$(InPath)/MSBuild.Obfuscar.Core.Test.dll" />
+</Obfuscator>
