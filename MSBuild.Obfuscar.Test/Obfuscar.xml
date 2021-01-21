@@ -3,7 +3,9 @@
   <!-- https://docs.obfuscar.com/getting-started/configuration.html -->
   <Var name="InPath" value="bin/Release" />
   <Var name="OutPath" value="$(InPath)/obfuscated" />
-  <Var name="KeepPublicApi" value="true" />
+  <Var name="KeepPublicApi" value="false" />
   <Var name="HidePrivateApi" value="true" />
+  <Var name="HideStrings" value="true" />
+  <Var name="UseUnicodeNames" value="true" />
   <Module file="$(InPath)/MSBuild.Obfuscar.Test.exe" />
 </Obfuscator>
