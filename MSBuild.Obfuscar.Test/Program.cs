@@ -5,12 +5,14 @@ using System.Text;
 
 namespace MSBuild.Obfuscar.Test
 {
-    class Program
+    public class Program
     {
+        public static string message1 = "You can read this!";
+        private static string message2 = "and you can read this!";
         static void Main(string[] args)
         {
-            var message = "You can't read this!";
-            Console.WriteLine(message);
+            Console.WriteLine(message1);
+            Console.WriteLine(message2);
             Console.ReadKey();
         }
     }
