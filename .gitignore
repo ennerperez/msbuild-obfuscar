@@ -752,3 +752,11 @@ DerivedData/
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/xcode,rider,linux,macos,csharp,windows,visualstudio,visualstudiocode
+
+# Exceptions
+
+!src/.nuget
+!src/MSBuild.Obfuscar/build
+!src/MSBuild.Obfuscar/content
+
+# End Exceptions
