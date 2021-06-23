@@ -1,0 +1,75 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".files", ".files", "{5A49A884-1C02-43DD-80CA-E7C1E53905E5}"
+	ProjectSection(SolutionItems) = preProject
+		.editoricon.png = .editoricon.png
+		..\.gitattributes = ..\.gitattributes
+		..\.gitignore = ..\.gitignore
+		..\LICENSE = ..\LICENSE
+		..\README.md = ..\README.md
+		..\VERSION = ..\VERSION
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{0ABA6FF9-E5EC-4550-B80A-09B8EA69C797}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSBuild.Obfuscar", "MSBuild.Obfuscar\MSBuild.Obfuscar.csproj", "{0451BAEF-DF2E-4B98-8644-94EE9415E389}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{9AE4AF05-540E-4406-8FE5-0554F3C38A01}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "net5.0", "Examples\net5.0\net5.0.csproj", "{9BE70948-2494-48B5-AE95-D469AEC9C4B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "netstandard2.1", "Examples\netstandard2.1\netstandard2.1.csproj", "{30B372FE-1D6D-4524-B9FE-19DC1ED04B81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "netstandard1.7", "Examples\netstandard1.7\netstandard1.7.csproj", "{FA744831-7CA9-460E-9C2B-99BFAB10F2C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "net2.0", "Examples\net2.0\net2.0.csproj", "{C5AE173E-D640-403E-94AA-F0F6B28B860B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "net4.0", "Examples\net4.0\net4.0.csproj", "{5295CAAA-9081-48C4-8E8D-8DD4A35F0F37}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0451BAEF-DF2E-4B98-8644-94EE9415E389}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BE70948-2494-48B5-AE95-D469AEC9C4B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BE70948-2494-48B5-AE95-D469AEC9C4B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BE70948-2494-48B5-AE95-D469AEC9C4B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30B372FE-1D6D-4524-B9FE-19DC1ED04B81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30B372FE-1D6D-4524-B9FE-19DC1ED04B81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30B372FE-1D6D-4524-B9FE-19DC1ED04B81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA744831-7CA9-460E-9C2B-99BFAB10F2C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA744831-7CA9-460E-9C2B-99BFAB10F2C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA744831-7CA9-460E-9C2B-99BFAB10F2C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5AE173E-D640-403E-94AA-F0F6B28B860B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5AE173E-D640-403E-94AA-F0F6B28B860B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5AE173E-D640-403E-94AA-F0F6B28B860B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5295CAAA-9081-48C4-8E8D-8DD4A35F0F37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5295CAAA-9081-48C4-8E8D-8DD4A35F0F37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5295CAAA-9081-48C4-8E8D-8DD4A35F0F37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D112B0C6-20B6-4AEA-B889-DA8FD8B57A95}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9BE70948-2494-48B5-AE95-D469AEC9C4B5} = {9AE4AF05-540E-4406-8FE5-0554F3C38A01}
+		{30B372FE-1D6D-4524-B9FE-19DC1ED04B81} = {9AE4AF05-540E-4406-8FE5-0554F3C38A01}
+		{FA744831-7CA9-460E-9C2B-99BFAB10F2C7} = {9AE4AF05-540E-4406-8FE5-0554F3C38A01}
+		{C5AE173E-D640-403E-94AA-F0F6B28B860B} = {9AE4AF05-540E-4406-8FE5-0554F3C38A01}
+		{5295CAAA-9081-48C4-8E8D-8DD4A35F0F37} = {9AE4AF05-540E-4406-8FE5-0554F3C38A01}
+	EndGlobalSection
+EndGlobal
