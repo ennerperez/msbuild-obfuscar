@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Obfuscator>
-  <!-- https://docs.obfuscar.com/getting-started/configuration.html -->
-  <Var name="InPath" value="bin/Release" />
-  <Var name="OutPath" value="$(InPath)/obfuscated" />
-  <Var name="KeepPublicApi" value="true" />
-  <Var name="HidePrivateApi" value="true" />
-  <Module file="$(InPath)/$OutputFileName$" />
-</Obfuscator>
