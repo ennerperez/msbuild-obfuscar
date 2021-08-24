@@ -33,7 +33,7 @@ namespace MSBuild.Obfuscar.Tasks {
 
             var ret = new ObfuscateArgs() {
                 Obfuscator = This.Obfuscator,
-                ObfuscatorConfigFullPath = This.ObfuscatorConfigFullPath,
+                ObfuscatorConfigTemplate = This.ObfuscatorConfigTemplate,
                 ProjectDir = This.ProjectDir,
                 ProjectName = This.ProjectName,
                 TargetDir = This.TargetDir,
@@ -50,16 +50,16 @@ namespace MSBuild.Obfuscar.Tasks {
 
         public static IDictionary<string, string> ToDictionary(this ObfuscateArgs This) {
             var ret = new Dictionary<string, string>() {
-                {ObfuscateVariableNames.ObfuscatorConfigFullPath, This.ObfuscatorConfigFullPath},
-                {ObfuscateVariableNames.InPath, This.InPath },
-                {ObfuscateVariableNames.Module, This.Module },
-                {ObfuscateVariableNames.Obfuscator, This.Obfuscator },
-                {ObfuscateVariableNames.OutPath, This.OutPath },
-                {ObfuscateVariableNames.OutPathConfig, This.OutPathConfig },
-                {ObfuscateVariableNames.ProjectDir, This.ProjectDir },
-                {ObfuscateVariableNames.ProjectName, This.ProjectName },
-                {ObfuscateVariableNames.TargetDir, This.TargetDir },
-                {ObfuscateVariableNames.TargetFileName, This.TargetFileName },
+                {ObfuscateArgNames.Default.ObfuscatorConfigTemplate, This.ObfuscatorConfigTemplate},
+                {ObfuscateArgNames.Default.InPath, This.InPath },
+                {ObfuscateArgNames.Default.Module, This.Module },
+                {ObfuscateArgNames.Default.Obfuscator, This.Obfuscator },
+                {ObfuscateArgNames.Default.OutPath, This.OutPath },
+                {ObfuscateArgNames.Default.OutPathConfig, This.OutPathConfig },
+                {ObfuscateArgNames.Default.ProjectDir, This.ProjectDir },
+                {ObfuscateArgNames.Default.ProjectName, This.ProjectName },
+                {ObfuscateArgNames.Default.TargetDir, This.TargetDir },
+                {ObfuscateArgNames.Default.TargetFileName, This.TargetFileName },
             };
 
             return ret;

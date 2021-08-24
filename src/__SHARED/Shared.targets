@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+
+  <PropertyGroup>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <DebugType>full</DebugType>
+    <LangVersion>preview</LangVersion>
+    <nullable>enable</nullable>
+    <DisableImplicitNamespaceImports>false</DisableImplicitNamespaceImports>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\__SHARED\AssemblyInfo.Internal.g.cs" />
+    <Compile Include="..\__SHARED\AssemblyInfo.Internal.Attributes.cs" />
+  </ItemGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='Release'">
+    <PackageProjectUrl>https://github.com/MediatedCommunications/Extensions</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/MediatedCommunications/Extensions</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+  
+</Project>
+

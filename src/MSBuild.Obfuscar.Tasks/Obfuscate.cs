@@ -10,14 +10,14 @@ using System.Threading.Tasks.Dataflow;
 namespace MSBuild.Obfuscar.Tasks {
 
     public class Obfuscate : Microsoft.Build.Utilities.Task {
-        
-        public string Obfuscator { get; set; }
-        public string ObfuscatorConfigFullPath { get; set; }
 
-        public string ProjectDir { get; set; }
-        public string ProjectName { get; set; }
-        public string TargetDir { get; set; }
-        public string TargetFileName { get; set; }
+        public string Obfuscator { get; set; } = string.Empty;
+        public string ObfuscatorConfigTemplate { get; set; } = string.Empty;
+
+        public string ProjectDir { get; set; } = string.Empty;
+        public string ProjectName { get; set; } = string.Empty;
+        public string TargetDir { get; set; } = string.Empty;
+        public string TargetFileName { get; set; } = string.Empty;
 
 
 
@@ -25,33 +25,37 @@ namespace MSBuild.Obfuscar.Tasks {
 
             var Args = this.GetArgs();
 
+            Log.LogMessage(MessageImportance.High, $@"Obfuscate - v{InternalAssemblyInfo.AssemblyVersion} @ {InternalAssemblyInfo.AssemblyBuildDate}");
+            Log.LogMessage(MessageImportance.High, $@"-----------");
             Log.LogMessage(MessageImportance.High, $@"Obfuscator               = {Args.Obfuscator}");
-            Log.LogMessage(MessageImportance.High, $@"ObfuscatorConfigFullPath = {Args.ObfuscatorConfigFullPath}");
+            Log.LogMessage(MessageImportance.High, $@"ObfuscatorConfigTemplate = {Args.ObfuscatorConfigTemplate}");
             Log.LogMessage(MessageImportance.High, $@"ProjectDir               = {Args.ProjectDir}");
             Log.LogMessage(MessageImportance.High, $@"TargetDir                = {Args.TargetDir}");
             Log.LogMessage(MessageImportance.High, $@"TargetFileName           = {Args.TargetFileName}");
 
 
 
-            if (!System.IO.File.Exists(ObfuscatorConfigFullPath)) {
-                Log.LogError($@"ConfigFullPath({ObfuscatorConfigFullPath}) does not exist");
-                return false;
+            var ConfigTemplate = Resources.Defaults.ResourcePackage.Obfuscar;
+            if (System.IO.File.Exists(ObfuscatorConfigTemplate)) {
+                ConfigTemplate = System.IO.File.ReadAllText(ObfuscatorConfigTemplate)
+                ;
+            } else {
+                Log.LogMessage(MessageImportance.High, $@"Path to {ObfuscateArgNames.Default.ObfuscatorConfigTemplate} does not exist.  Using a default template.");
             }
 
-            Log.LogMessage(MessageImportance.High, $@"Replacing variables in ObfuscatorConfigFullPath...");
+            var Config = ConfigTemplate.Replace(Args);
 
-            var OutPathConfigConfig = System.IO.File.ReadAllText(ObfuscatorConfigFullPath)
-                .Replace(Args)
-                ;
-            Log.LogMessage("New ConfigFullPath:");
-            Log.LogMessage(OutPathConfigConfig);
-
+            Log.LogMessage(MessageImportance.High, $@"Creating {Args.OutPathConfig}:");
+            Log.LogMessage(MessageImportance.High, $@"FROM TEMPLATE:");
+            Log.LogMessage(MessageImportance.High, ConfigTemplate);
+            Log.LogMessage(MessageImportance.High, $@"NEW CONTENT:");
+            Log.LogMessage(MessageImportance.High, Config);
 
             var CreateDirectoryResult = new MakeDir() {
                 Directories = Args.OutPath.ToTaskList(),
             }.Initialize(this).Execute();
 
-            System.IO.File.WriteAllText(Args.OutPathConfig, OutPathConfigConfig);
+            System.IO.File.WriteAllText(Args.OutPathConfig, Config);
 
             var ExecTask = new Exec() {
                 Command = $@"""{Args.Obfuscator}"" ""{Args.OutPathConfig}""",

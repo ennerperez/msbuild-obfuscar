@@ -35,9 +35,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "net4.0", "Examples\net4.0\n
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSBuild.Obfuscar(Tests)", "MSBuild.Obfuscar(Tests)\MSBuild.Obfuscar(Tests).csproj", "{5AB5AD08-B98E-4DCF-ACD5-6EFAD2093DC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSBuild.Obfuscar(Tests).ClickOnce", "MSBuild.Obfuscar(Tests).ClickOnce\MSBuild.Obfuscar(Tests).ClickOnce.csproj", "{8834B60A-D701-4D30-B126-E1EB64447C8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSBuild.Obfuscar(Tests).ClickOnce", "MSBuild.Obfuscar(Tests).ClickOnce\MSBuild.Obfuscar(Tests).ClickOnce.csproj", "{8834B60A-D701-4D30-B126-E1EB64447C8E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSBuild.Obfuscar.Tasks", "MSBuild.Obfuscar.Tasks\MSBuild.Obfuscar.Tasks.csproj", "{A77863A9-9561-46BB-A791-61FB11A5738B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSBuild.Obfuscar.Tasks", "MSBuild.Obfuscar.Tasks\MSBuild.Obfuscar.Tasks.csproj", "{A77863A9-9561-46BB-A791-61FB11A5738B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "__SHARED", "__SHARED", "{18EFF705-AC28-477E-A64E-49733BFCB7F1}"
+	ProjectSection(SolutionItems) = preProject
+		__SHARED\AssemblyInfo.Internal.Attributes.cs = __SHARED\AssemblyInfo.Internal.Attributes.cs
+		__SHARED\AssemblyInfo.Internal.tt = __SHARED\AssemblyInfo.Internal.tt
+		__SHARED\AssemblyInfo.Nuget.tt = __SHARED\AssemblyInfo.Nuget.tt
+		__SHARED\Shared.targets = __SHARED\Shared.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{24288C5A-1ECB-42E0-970D-56EC79F303F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -86,6 +96,8 @@ Global
 		{FA744831-7CA9-460E-9C2B-99BFAB10F2C7} = {9AE4AF05-540E-4406-8FE5-0554F3C38A01}
 		{C5AE173E-D640-403E-94AA-F0F6B28B860B} = {9AE4AF05-540E-4406-8FE5-0554F3C38A01}
 		{5295CAAA-9081-48C4-8E8D-8DD4A35F0F37} = {9AE4AF05-540E-4406-8FE5-0554F3C38A01}
+		{5AB5AD08-B98E-4DCF-ACD5-6EFAD2093DC5} = {24288C5A-1ECB-42E0-970D-56EC79F303F3}
+		{8834B60A-D701-4D30-B126-E1EB64447C8E} = {24288C5A-1ECB-42E0-970D-56EC79F303F3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D112B0C6-20B6-4AEA-B889-DA8FD8B57A95}

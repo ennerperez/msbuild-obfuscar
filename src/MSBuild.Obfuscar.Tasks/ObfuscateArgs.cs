@@ -1,15 +1,15 @@
 ﻿namespace MSBuild.Obfuscar.Tasks {
-    internal class ObfuscateArgs {
-        public string Obfuscator { get; set; }
-        public string ObfuscatorConfigFullPath { get; set; }
-        public string ProjectDir { get; set; }
-        public string ProjectName { get; set; }
-        public string TargetDir { get; set; }
-        public string TargetFileName { get; set; }
+    internal partial class ObfuscateArgs {
+        public string Obfuscator { get; set; } = string.Empty;
+        public string ObfuscatorConfigTemplate { get; set; } = string.Empty;
+        public string ProjectDir { get; set; } = string.Empty;
+        public string ProjectName { get; set; } = string.Empty;
+        public string TargetDir { get; set; } = string.Empty;
+        public string TargetFileName { get; set; } = string.Empty;
 
-        public string InPath { get; set; }
-        public string OutPath { get; set; }
-        public string OutPathConfig { get; set; }
-        public string Module { get; set; }
+        public string InPath { get; set; } = string.Empty;
+        public string OutPath { get; set; } = string.Empty;
+        public string OutPathConfig { get; set; } = string.Empty;
+        public string Module { get; set; } = string.Empty;
     }
 }

@@ -1,4 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\__SHARED\Shared.targets" />
+
   <PropertyGroup>
     <PackageId>MsBuild.Obfuscar</PackageId>
     <Description>Build targets interface for Obfuscar</Description>

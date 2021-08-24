@@ -5,13 +5,10 @@
     <TargetFramework>net50</TargetFramework>
     <RootNamespace>MSBuild.Obfuscar.Tests</RootNamespace>
 </PropertyGroup>
-  
+
 
   <ItemGroup>
-    <ProjectReference Include="..\MSBuild.Obfuscar\MSBuild.Obfuscar.csproj">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </ProjectReference>
+    <PackageReference Include="MsBuild.Obfuscar" Version="2.2.31" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,29 @@
+<#@ template debug="true" hostspecific="false" language="C#" #>
+<#@ output extension=".g.targets" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#
+
+	var Date = DateTimeOffset.Now.ToString(System.Globalization.DateTimeFormatInfo.InvariantInfo);
+
+    var VersionDate = DateTime.Now.AddDays(0);
+
+    var Major = (VersionDate.Year % 100);
+    var Minor = VersionDate.Month;
+    var Build = VersionDate.Day;
+    var Revision = (VersionDate.Hour * 60) + VersionDate.Minute;
+
+    var Version = String.Format("{0:00}.{1:00}.{2:00}.{3:0000}", Major, Minor, Build, Revision);
+
+#>
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <AssemblyVersion><#= Version #></AssemblyVersion>
+    <FileVersion><#= Version #></FileVersion>
+    <Version><#= Version #></Version>
+  </PropertyGroup>
+</Project>
+

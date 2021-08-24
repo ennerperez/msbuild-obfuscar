@@ -1,0 +1,34 @@
+﻿<#@ template debug="true" hostspecific="false" language="C#" #>
+<#@ output extension=".g.cs" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+
+<#
+
+	var Date = DateTimeOffset.Now.ToString(System.Globalization.DateTimeFormatInfo.InvariantInfo);
+
+    var VersionDate = DateTime.Now.AddDays(0);
+
+    var Major = (VersionDate.Year % 100);
+    var Minor = VersionDate.Month;
+    var Build = VersionDate.Day;
+    var Revision = (VersionDate.Hour * 60) + VersionDate.Minute;
+
+    var Version = String.Format("{0:00}.{1:00}.{2:00}.{3:0000}", Major, Minor, Build, Revision);
+
+#>
+
+
+using System;
+
+    static internal partial class InternalAssemblyInfo {
+
+		public const string AssemblyBuildDateString = "<#= Date #>" ;
+		public static DateTimeOffset AssemblyBuildDate {get; private set;} = DateTimeOffset.Parse(AssemblyBuildDateString, System.Globalization.DateTimeFormatInfo.InvariantInfo);
+
+        public const string AssemblyVersionString = "<#= Version #>";
+        public static Version AssemblyVersion {get; private set;} = new Version(AssemblyVersionString);
+
+	}
