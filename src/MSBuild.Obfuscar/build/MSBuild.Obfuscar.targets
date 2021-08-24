@@ -47,6 +47,11 @@ WARNING:  DO NOT MODIFY this file unless you are knowledgeable about MSBuild and
     <ObfuscatorConfigTemplate Condition=" '$(OS)' != 'Windows_NT' AND !Exists('$(ObfuscatorConfigTemplate)')">$(ProjectDir)Obfuscar.xml</ObfuscatorConfigTemplate>
     <ObfuscatorConfigTemplate Condition=" '$(OS)' != 'Windows_NT' AND !Exists('$(ObfuscatorConfigTemplate)')">$(SolutionDir)Obfuscar.xml</ObfuscatorConfigTemplate>
 
+    <ObfuscatorExePath Condition=" '$(ObfuscatorExePath)' == '' ">$(ObfuscatorToolsPath)\Obfuscar.Console.exe</ObfuscatorExePath>
+
+    <ObfuscatorRunInRelease Condition=" '$(ObfuscatorRunInRelease)' == '' ">true</ObfuscatorRunInRelease>
+    <ObfuscatorRunInDebug Condition=" '$(ObfuscatorRunInDebug)' == '' ">true</ObfuscatorRunInDebug>
+    
     <!-- Commands -->
     <ObfuscateCommand>$(ObfuscatorCommand) "$(ObfuscatorConfigTemplate)"</ObfuscateCommand>
   </PropertyGroup>
@@ -56,7 +61,7 @@ WARNING:  DO NOT MODIFY this file unless you are knowledgeable about MSBuild and
     <Error Condition="'$(DownloadObfuscatorExe)' != 'true' AND !Exists('$(ObfuscatorExePath)')" Text="Unable to locate '$(ObfuscatorExePath)'" />
   </Target>
 
-  <Target Name="Obfuscator" AfterTargets="AfterBuild" DependsOnTargets="CheckPrerequisites" Condition="'$(ConfigurationName)' == 'Release'">
+  <Target Name="Obfuscate" DependsOnTargets="CheckPrerequisites">
 
     <Obfuscate 
       Obfuscator="$(ObfuscatorExePath)" 
@@ -65,16 +70,16 @@ WARNING:  DO NOT MODIFY this file unless you are knowledgeable about MSBuild and
       ProjectDir="$(ProjectDir)" 
       ProjectName="$(ProjectName)"
       TargetDir="$(TargetDir)" 
-      TargetFileName="$(TargetFileName)"  />
-  <!--
-    
-    <MakeDir Directories="$(TargetDir)obfuscated" />
-    <Exec WorkingDirectory="$(ProjectDir)" Command="$(ObfuscateCommand)" />
-    <ItemGroup>
-      <FilesToMove Include="$(TargetDir)obfuscated\*.*" />
-    </ItemGroup>
-    <Move SourceFiles="@(FilesToMove)" DestinationFolder="$(TargetDir)" OverwriteReadOnlyFiles="true" Condition=" '$(OS)' == 'Windows_NT'" />
-    <RemoveDir Directories="$(TargetDir)obfuscated" Condition=" '$(OS)' == 'Windows_NT'" />
-    -->
+      TargetFileName="$(TargetFileName)"
+      />
   </Target>
+
+  <Target Name="Obfuscate_Debug" AfterTargets="AfterBuild" DependsOnTargets="Obfuscate" Condition="'$(ConfigurationName)' == 'Debug' AND $(ObfuscatorRunInDebug)">
+
+  </Target>
+
+  <Target Name="Obfuscate_Release" AfterTargets="AfterBuild" DependsOnTargets="Obfuscate" Condition="'$(ConfigurationName)' == 'Release' AND $(ObfuscatorRunInRelease)">
+    
+  </Target>
+
 </Project>

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.Text.RegularExpressions;
 
@@ -28,8 +29,10 @@ namespace MSBuild.Obfuscar.Tasks {
             var InPath = This.TargetDir;
             var Module = System.IO.Path.Combine(InPath, This.TargetFileName);
 
-            var OutPath = System.IO.Path.Combine(This.TargetDir, "obfuscated");
-            var OutPathConfig = System.IO.Path.Combine(OutPath, "Obfuscar.g.xml");
+            var RandomNumber = DateTime.Now.Ticks;
+
+            var OutPath = System.IO.Path.Combine(This.TargetDir, $@"obfuscated_{RandomNumber}");
+            var OutPathConfig = System.IO.Path.Combine(OutPath, $@"Obfuscar.g.xml");
 
             var ret = new ObfuscateArgs() {
                 Obfuscator = This.Obfuscator,

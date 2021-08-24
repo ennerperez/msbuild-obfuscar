@@ -51,16 +51,18 @@ namespace MSBuild.Obfuscar.Tasks {
             Log.LogMessage(MessageImportance.High, $@"NEW CONTENT:");
             Log.LogMessage(MessageImportance.High, Config);
 
-            var CreateDirectoryResult = new MakeDir() {
+
+            var CreateDirectoryTask = new MakeDir() {
                 Directories = Args.OutPath.ToTaskList(),
-            }.Initialize(this).Execute();
+            }.Initialize(this);
+            var CreateDirectoryResult = CreateDirectoryTask.Execute();
 
             System.IO.File.WriteAllText(Args.OutPathConfig, Config);
 
-            var ExecTask = new Exec() {
+            var ExecObfuscatorTask = new Exec() {
                 Command = $@"""{Args.Obfuscator}"" ""{Args.OutPathConfig}""",
             }.Initialize(this);
-            var ExecResult = ExecTask.Execute();
+            var ExecObfuscatorResult = ExecObfuscatorTask.Execute();
 
 
             var FilesToMoveTask = new CreateItem() {
@@ -70,20 +72,28 @@ namespace MSBuild.Obfuscar.Tasks {
             var FilesToMove = FilesToMoveTask.Include;
 
 
-            var MoveResult = new Move() {
+            var MoveTask = new Move() {
                 SourceFiles = FilesToMove,
                 DestinationFolder = Args.InPath.ToTaskItem(),
                 OverwriteReadOnlyFiles = true,
-            }.Initialize(this).Execute();
-            /*
-            var DeleteDirectoryResult = new RemoveDir() {
+            }.Initialize(this);
+            var MoveResult = MoveTask.Execute();
+
+
+            var DeleteDirectoryTask = new RemoveDir() {
                 Directories = Args.OutPath.ToTaskList()
-            }.Initialize(this).Execute();
-            */
+            }.Initialize(this);
+            var DeleteDirectoryResult = DeleteDirectoryTask.Execute();
 
-            
+            var ret = true
+                && CreateDirectoryResult
+                && ExecObfuscatorResult
+                && FilesToMoveResult
+                && MoveResult
+                && DeleteDirectoryResult
+                ;
 
-            return true;
+            return ret;
         }
     }
 }
