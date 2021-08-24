@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\MSBUILD.Obfuscar\build\MsBuild.Obfuscar.Targets" />
+  
+  <PropertyGroup>
+    <TargetFramework>net50</TargetFramework>
+    <RootNamespace>MSBuild.Obfuscar.Tests</RootNamespace>
+</PropertyGroup>
+  
+
+  <ItemGroup>
+    <ProjectReference Include="..\MSBuild.Obfuscar\MSBuild.Obfuscar.csproj">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </ProjectReference>
+  </ItemGroup>
+
+</Project>

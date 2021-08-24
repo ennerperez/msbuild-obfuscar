@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "MSBuild.Obfuscar(Tests)": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Windows\\Microsoft.NET\\Framework\\v4.0.30319\\MSBuild.exe",
+      "commandLineArgs": "\"C:\\Users\\Tony Valenti\\Source\\Repos\\TonyValenti\\msbuild-obfuscar\\src\\MSBuild.Obfuscar(Tests)\\MSBuild.Obfuscar(Tests).csproj\""
+    }
+  }
+}

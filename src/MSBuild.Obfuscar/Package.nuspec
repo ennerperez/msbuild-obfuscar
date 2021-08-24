@@ -4,7 +4,7 @@
     <id>$id$</id>
     <version>$version$</version>
     <title>$id$</title>
-    <authors>Enner Pérez</authors>
+    <authors>Enner Pérez, Tony Valenti</authors>
     <owners>Enner Pérez</owners>
     <license type="expression">MIT</license>
     <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
@@ -16,13 +16,13 @@
     <description>Build targets interface for Obfuscar</description>
     <summary>$description$</summary>
     <releaseNotes>
-      Includes 'Obfuscar' v2.2.30 in a solution-level NuGet package
+      Includes 'Obfuscar' v2.2.31 in a solution-level NuGet package
     </releaseNotes>
     <copyright>$copyright$</copyright>
     <language>en</language>
     <tags>Obfuscar MSBuild Targets</tags>
     <dependencies>
-      <dependency id="Obfuscar" version="2.2.30" />
+      <dependency id="Obfuscar" version="2.2.31" />
     </dependencies>
   </metadata>
   <files>
@@ -30,6 +30,12 @@
     <file src="..\..\LICENSE" target="LICENSE" />
     <file src="..\..\README.md" target="README.md" />
     <file src="build\" target="build" />
-    <file src="content\" target="content" />
   </files>
+
+  <references>
+    <group>
+      <reference file="Microsoft.Build.Framework.dll"/>
+    </group>
+  </references>
+  
 </package>

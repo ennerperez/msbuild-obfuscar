@@ -19,19 +19,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{0ABA6F
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSBuild.Obfuscar", "MSBuild.Obfuscar\MSBuild.Obfuscar.csproj", "{0451BAEF-DF2E-4B98-8644-94EE9415E389}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSBuild.Obfuscar", "MSBuild.Obfuscar\MSBuild.Obfuscar.csproj", "{0451BAEF-DF2E-4B98-8644-94EE9415E389}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{9AE4AF05-540E-4406-8FE5-0554F3C38A01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "net5.0", "Examples\net5.0\net5.0.csproj", "{9BE70948-2494-48B5-AE95-D469AEC9C4B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "net5.0", "Examples\net5.0\net5.0.csproj", "{9BE70948-2494-48B5-AE95-D469AEC9C4B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "netstandard2.1", "Examples\netstandard2.1\netstandard2.1.csproj", "{30B372FE-1D6D-4524-B9FE-19DC1ED04B81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "netstandard2.1", "Examples\netstandard2.1\netstandard2.1.csproj", "{30B372FE-1D6D-4524-B9FE-19DC1ED04B81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "netstandard1.7", "Examples\netstandard1.7\netstandard1.7.csproj", "{FA744831-7CA9-460E-9C2B-99BFAB10F2C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "netstandard1.7", "Examples\netstandard1.7\netstandard1.7.csproj", "{FA744831-7CA9-460E-9C2B-99BFAB10F2C7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "net2.0", "Examples\net2.0\net2.0.csproj", "{C5AE173E-D640-403E-94AA-F0F6B28B860B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "net4.0", "Examples\net4.0\net4.0.csproj", "{5295CAAA-9081-48C4-8E8D-8DD4A35F0F37}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSBuild.Obfuscar(Tests)", "MSBuild.Obfuscar(Tests)\MSBuild.Obfuscar(Tests).csproj", "{5AB5AD08-B98E-4DCF-ACD5-6EFAD2093DC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSBuild.Obfuscar(Tests).ClickOnce", "MSBuild.Obfuscar(Tests).ClickOnce\MSBuild.Obfuscar(Tests).ClickOnce.csproj", "{8834B60A-D701-4D30-B126-E1EB64447C8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSBuild.Obfuscar.Tasks", "MSBuild.Obfuscar.Tasks\MSBuild.Obfuscar.Tasks.csproj", "{A77863A9-9561-46BB-A791-61FB11A5738B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,12 +64,21 @@ Global
 		{5295CAAA-9081-48C4-8E8D-8DD4A35F0F37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5295CAAA-9081-48C4-8E8D-8DD4A35F0F37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5295CAAA-9081-48C4-8E8D-8DD4A35F0F37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AB5AD08-B98E-4DCF-ACD5-6EFAD2093DC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AB5AD08-B98E-4DCF-ACD5-6EFAD2093DC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AB5AD08-B98E-4DCF-ACD5-6EFAD2093DC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AB5AD08-B98E-4DCF-ACD5-6EFAD2093DC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8834B60A-D701-4D30-B126-E1EB64447C8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8834B60A-D701-4D30-B126-E1EB64447C8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8834B60A-D701-4D30-B126-E1EB64447C8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8834B60A-D701-4D30-B126-E1EB64447C8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A77863A9-9561-46BB-A791-61FB11A5738B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A77863A9-9561-46BB-A791-61FB11A5738B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A77863A9-9561-46BB-A791-61FB11A5738B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A77863A9-9561-46BB-A791-61FB11A5738B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {D112B0C6-20B6-4AEA-B889-DA8FD8B57A95}
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9BE70948-2494-48B5-AE95-D469AEC9C4B5} = {9AE4AF05-540E-4406-8FE5-0554F3C38A01}
@@ -71,5 +86,8 @@ Global
 		{FA744831-7CA9-460E-9C2B-99BFAB10F2C7} = {9AE4AF05-540E-4406-8FE5-0554F3C38A01}
 		{C5AE173E-D640-403E-94AA-F0F6B28B860B} = {9AE4AF05-540E-4406-8FE5-0554F3C38A01}
 		{5295CAAA-9081-48C4-8E8D-8DD4A35F0F37} = {9AE4AF05-540E-4406-8FE5-0554F3C38A01}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D112B0C6-20B6-4AEA-B889-DA8FD8B57A95}
 	EndGlobalSection
 EndGlobal

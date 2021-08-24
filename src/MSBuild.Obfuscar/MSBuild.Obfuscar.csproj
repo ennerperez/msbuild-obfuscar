@@ -1,72 +1,66 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0451BAEF-DF2E-4B98-8644-94EE9415E389}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MSBuild.Obfuscar</RootNamespace>
-    <AssemblyName>MSBuild.Obfuscar</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>
-    </TargetFrameworkProfile>
-    <FileAlignment>512</FileAlignment>
+    <PackageId>MsBuild.Obfuscar</PackageId>
+    <Description>Build targets interface for Obfuscar</Description>
+    <PackageTags>Obfuscar MSBuild Targets</PackageTags>
+    <Authors>Enner Pérez, Tony Valenti</Authors>
+    <Version>2.2.31</Version>
+
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/ennerperez/msbuild-obfuscar</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ennerperez/msbuild-obfuscar</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+
+    <PackageIcon>.editoricon.png</PackageIcon>
+    <PackageIconUrl />
+
+
+    <PackageReleaseNotes>Includes 'Obfuscar' v2.2.31 in a solution-level NuGet package</PackageReleaseNotes>
+
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <OutputPath>bin\Debug\</OutputPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <OutputPath>bin\Release\</OutputPath>
-  </PropertyGroup>
+  
   <PropertyGroup>
-    <StartupObject />
+    <TargetFramework>net472</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <IsPackable>true</IsPackable>
   </PropertyGroup>
+ 
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <PackageReference Include="Obfuscar" Version="2.2.31">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
+
   <ItemGroup>
-    <None Include="build\MSBuild.Obfuscar.targets">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="content\Obfuscar.xml.transform" />
-    <None Include="Package.nuspec">
-      <SubType>Designer</SubType>
+    <None Include="..\.editoricon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
     </None>
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-  </Target>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>-->
+
+  <ItemGroup>
+    <FilesToPack1 Include="$(TargetDir)\*" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="@(FilesToPack1)" Visible="False" Pack="True" PackagePath="tools" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FilesToPack2 Include="build\*" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="@(FilesToPack2)" Visible="False" Pack="True" PackagePath="build" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+  <ProjectReference Include="..\MSBuild.Obfuscar.Tasks\MSBuild.Obfuscar.Tasks.csproj" />
+</ItemGroup>
+ 
+  
+
+  
 </Project>

@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Obfuscator>
   <!-- https://docs.obfuscar.com/getting-started/configuration.html -->
-  <Var name="InPath" value="bin/Release" />
-  <Var name="OutPath" value="$(InPath)/obfuscated" />
-  <Var name="KeepPublicApi" value="false" />
+  <Var name="InPath" value="$$INPATH$" />
+  <Var name="OutPath" value="$$OUTPATH$$" />
+  <Var name="KeepPublicApi" value="true" />
   <Var name="HidePrivateApi" value="true" />
   <Var name="HideStrings" value="true" />
   <Var name="UseUnicodeNames" value="true" />
-  <Module file="$(InPath)/MSBuild.Obfuscar.Example.dll" />
+  <Module file="$$MODULE$$" />
 </Obfuscator>
