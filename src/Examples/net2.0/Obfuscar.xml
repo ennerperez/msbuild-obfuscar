@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Obfuscator>
   <!-- https://docs.obfuscar.com/getting-started/configuration.html -->
-  <Var name="InPath" value="$$INPATH$" />
-  <Var name="OutPath" value="$$OUTPATH$$" />
+  <Var name="InPath" value="{{InPath}}" />
+  <Var name="OutPath" value="{{OutPath}}" />
   <Var name="KeepPublicApi" value="true" />
   <Var name="HidePrivateApi" value="true" />
   <Var name="HideStrings" value="true" />
   <Var name="UseUnicodeNames" value="true" />
-  <Module file="$$MODULE$$" />
+  <Module file="{{Module}}" />
 </Obfuscator>

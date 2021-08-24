@@ -51,10 +51,13 @@ WARNING:  DO NOT MODIFY this file unless you are knowledgeable about MSBuild and
 
     <ObfuscatorRunInRelease Condition=" '$(ObfuscatorRunInRelease)' == '' ">true</ObfuscatorRunInRelease>
     <ObfuscatorRunInDebug Condition=" '$(ObfuscatorRunInDebug)' == '' ">true</ObfuscatorRunInDebug>
+
+    <ObfuscatorConfigTemplate_ProjectReferences_Append Condition=" '$(ObfuscatorConfigTemplate_ProjectReferences_Append)' == '' ">true</ObfuscatorConfigTemplate_ProjectReferences_Append>
     
     <!-- Commands -->
     <ObfuscateCommand>$(ObfuscatorCommand) "$(ObfuscatorConfigTemplate)"</ObfuscateCommand>
-  </PropertyGroup>
+  
+</PropertyGroup>
 
   <Target Name="CheckPrerequisites">
     <!-- Raise an error if we're unable to locate Obfuscator.cli.exe  -->
@@ -65,12 +68,24 @@ WARNING:  DO NOT MODIFY this file unless you are knowledgeable about MSBuild and
 
     <Obfuscate 
       Obfuscator="$(ObfuscatorExePath)" 
-      ObfuscatorConfigTemplate="$(ObfuscatorConfigTemplate)" 
+      ObfuscatorConfigTemplate="$(ObfuscatorConfigTemplate)"
+      ObfuscatorConfigTemplate_ProjectReferences_Append="$(ObfuscatorConfigTemplate_ProjectReferences_Append)"
+      
+      SolutionDir="$(SolutionDir)" 
+      SolutionFileName="$(SolutionFileName)" 
+      SolutionName="$(SolutionName)"
       
       ProjectDir="$(ProjectDir)" 
+      ProjectFileName="$(ProjectFileName)"
       ProjectName="$(ProjectName)"
+      
       TargetDir="$(TargetDir)" 
+      TargetName="$(TargetName)" 
       TargetFileName="$(TargetFileName)"
+      
+      ProjectReferences="@(ReferencePathWithRefAssemblies)"
+      
+      
       />
   </Target>
 

@@ -3,14 +3,23 @@
   
   <!-- https://docs.obfuscar.com/getting-started/configuration.html -->
   
-  <Var name="InPath"          value="$$INPATH$$" />
-  <Var name="OutPath"         value="$$OUTPATH$$" />
+  <Var name="InPath"          value="{{InPath}}" />
+  <Var name="OutPath"         value="{{OutPath}}" />
   
   <Var name="KeepPublicApi"   value="true" />
   <Var name="HidePrivateApi"  value="true" />
   <Var name="HideStrings"     value="true" />
   <Var name="UseUnicodeNames" value="true" />
   
-  <Module file="$$MODULE$$" />
+  <Module file="{{Module}}" />
+
+  <Var name="ProjectName"     value="{{ProjectName}}" />
+  <Var name="ProjectDir"      value="{{ProjectDir}}" />
+
+  <Var name="SolutionName"    value="{{SolutionName}}" />
+  <Var name="SolutionDir"     value="{{SolutionDir}}" />
   
+  <Var name="TargetDir"       value="{{TargetDir}}" />
+  <Var name="TargetFileName"  value="{{TargetFileName}}" />
+
 </Obfuscator>

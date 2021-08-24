@@ -13,13 +13,24 @@ namespace MSBuild.Obfuscar.Tasks {
 
         public string Obfuscator { get; set; } = string.Empty;
         public string ObfuscatorConfigTemplate { get; set; } = string.Empty;
+        public bool ObfuscatorConfigTemplate_ProjectReferences_Append { get; set; } = true;
+
+        public string SolutionDir { get; set; } = string.Empty;
+        public string SolutionFileName { get; set; } = string.Empty;
+        public string SolutionName { get; set; } = string.Empty;
 
         public string ProjectDir { get; set; } = string.Empty;
+        public string ProjectFileName { get; set; } = string.Empty;
         public string ProjectName { get; set; } = string.Empty;
+
+        public ITaskItem[] ProjectReferences { get; set; } = Array.Empty<ITaskItem>();
+
         public string TargetDir { get; set; } = string.Empty;
         public string TargetFileName { get; set; } = string.Empty;
+        public string TargetName { get; set; } = string.Empty;
 
-
+        
+        
 
         public override bool Execute() {
 
@@ -72,12 +83,20 @@ namespace MSBuild.Obfuscar.Tasks {
             var FilesToMove = FilesToMoveTask.Include;
 
 
-            var MoveTask = new Move() {
-                SourceFiles = FilesToMove,
-                DestinationFolder = Args.InPath.ToTaskItem(),
-                OverwriteReadOnlyFiles = true,
-            }.Initialize(this);
-            var MoveResult = MoveTask.Execute();
+            var MoveResult = false;
+            var MoveAttempts = 0;
+            var MoveAttemptsMax = 10;
+
+            while (MoveResult == false && MoveAttempts < MoveAttemptsMax) {
+
+                var MoveTask = new Move() {
+                    SourceFiles = FilesToMove,
+                    DestinationFolder = Args.InPath.ToTaskItem(),
+                    OverwriteReadOnlyFiles = true,
+                }.Initialize(this);
+
+                MoveResult |= MoveTask.Execute();
+            }
 
 
             var DeleteDirectoryTask = new RemoveDir() {
