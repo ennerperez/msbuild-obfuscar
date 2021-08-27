@@ -73,31 +73,31 @@ namespace MSBuild.Obfuscar.Tests
         }
 
 
-        [Test]
+        [Test(Description = ".NET Framework 2.0")]
         public void net20()
         {
             Obfuscar("net2.0");
         }
 
-        [Test]
+        [Test(Description = ".NET Framework 4.0")]
         public void net40()
         {
             Obfuscar("net4.0");
         }
 
-        [Test]
+        [Test(Description = ".NET 5.0")]
         public void net50()
         {
             Obfuscar("net5.0");
         }
 
-        [Test]
+        [Test(Description = ".NET Standard 1.7")]
         public void netstandard17()
         {
             Obfuscar("netstandard1.7");
         }
 
-        [Test]
+        [Test(Description = ".NET Standard 2.1")]
         public void netstandard21()
         {
             Obfuscar("netstandard2.1");
