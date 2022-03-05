@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!--
 ***********************************************************************************************
 MSBuild.Obfuscator.targets
@@ -11,54 +11,52 @@ WARNING:  DO NOT MODIFY this file unless you are knowledgeable about MSBuild and
 -->
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
-  <PropertyGroup>
-    
-    <ObfuscatorToolsVersion>2.2.30</ObfuscatorToolsVersion>
+    <PropertyGroup>
 
-    <!-- ObfuscatorToolsPath -->
-    <ObfuscatorToolsPath Condition="'$(NuGetProjectStyle)' == 'PackageReference'">$(MSBuildThisFileDirectory)..\..\..\obfuscar\$(ObfuscatorToolsVersion)\tools</ObfuscatorToolsPath>
-    <ObfuscatorToolsPath Condition="'$(NuGetProjectStyle)' == 'PackageReference' And !Exists('$(ObfuscatorToolsPath)')">$(NuGetPackageRoot)obfuscar\$(ObfuscatorToolsVersion)\tools</ObfuscatorToolsPath>
+        <!-- ObfuscatorToolsPath -->
+        <ObfuscatorToolsPath Condition="'$(NuGetProjectStyle)' == 'PackageReference'">$(MSBuildThisFileDirectory)..\..\..\obfuscar\2.2.33\tools</ObfuscatorToolsPath>
+        <ObfuscatorToolsPath Condition="'$(NuGetProjectStyle)' == 'PackageReference' And !Exists('$(ObfuscatorToolsPath)')">$(NuGetPackageRoot)obfuscar\2.2.33\tools</ObfuscatorToolsPath>
 
-    <ObfuscatorToolsPath Condition="'$(NuGetProjectStyle)' != 'PackageReference'">$(MSBuildThisFileDirectory)..\..\obfuscar.$(ObfuscatorToolsVersion)\tools</ObfuscatorToolsPath>
-    <ObfuscatorToolsPath Condition="'$(NuGetProjectStyle)' != 'PackageReference' And !Exists('$(ObfuscatorToolsPath)')">$(SolutionDir)packages\obfuscar.$(ObfuscatorToolsVersion)\tools</ObfuscatorToolsPath>
+        <ObfuscatorToolsPath Condition="'$(NuGetProjectStyle)' != 'PackageReference'">$(MSBuildThisFileDirectory)..\..\obfuscar.2.2.33\tools</ObfuscatorToolsPath>
+        <ObfuscatorToolsPath Condition="'$(NuGetProjectStyle)' != 'PackageReference' And !Exists('$(ObfuscatorToolsPath)')">$(SolutionDir)packages\obfuscar.2.2.33\tools</ObfuscatorToolsPath>
 
-  </PropertyGroup>
+    </PropertyGroup>
 
-  <PropertyGroup>
+    <PropertyGroup>
 
-    <!-- Obfuscator command -->
-    <ObfuscatorExePath Condition=" '$(ObfuscatorExePath)' == '' ">$(ObfuscatorToolsPath)\Obfuscar.Console.exe</ObfuscatorExePath>
+        <!-- Obfuscator command -->
+        <ObfuscatorExePath Condition=" '$(ObfuscatorExePath)' == '' ">$(ObfuscatorToolsPath)\Obfuscar.Console.exe</ObfuscatorExePath>
 
-    <ObfuscatorCommand Condition=" '$(OS)' == 'Windows_NT'">"$(ObfuscatorExePath)"</ObfuscatorCommand>
-    <ObfuscatorCommand Condition=" '$(OS)' != 'Windows_NT' ">mono "$(ObfuscatorExePath)"</ObfuscatorCommand>
+        <ObfuscatorCommand Condition=" '$(OS)' == 'Windows_NT'">"$(ObfuscatorExePath)"</ObfuscatorCommand>
+        <ObfuscatorCommand Condition=" '$(OS)' != 'Windows_NT' ">mono "$(ObfuscatorExePath)"</ObfuscatorCommand>
 
-    <!-- PaddedSolutionDir -->
-    <PaddedSolutionDir Condition=" '$(OS)' == 'Windows_NT'">"$(SolutionDir) "</PaddedSolutionDir>
-    <PaddedSolutionDir Condition=" '$(OS)' != 'Windows_NT' ">"$(SolutionDir)"</PaddedSolutionDir>
+        <!-- PaddedSolutionDir -->
+        <PaddedSolutionDir Condition=" '$(OS)' == 'Windows_NT'">"$(SolutionDir) "</PaddedSolutionDir>
+        <PaddedSolutionDir Condition=" '$(OS)' != 'Windows_NT' ">"$(SolutionDir)"</PaddedSolutionDir>
 
-    <!-- ProjectFileName -->
-    <ProjectFileName Condition=" '$(OS)' == 'Windows_NT'">$([System.IO.Path]::Combine($(ProjectDir), "$(ProjectName).xml"))</ProjectFileName>
-    <ProjectFileName Condition=" '$(OS)' == 'Windows_NT' AND !Exists('$(ProjectFileName)')">$([System.IO.Path]::Combine($(ProjectDir), "Obfuscar.xml"))</ProjectFileName>
+        <!-- ProjectFileName -->
+        <ProjectFileName Condition=" '$(OS)' == 'Windows_NT'">$([System.IO.Path]::Combine($(ProjectDir), "$(ProjectName).xml"))</ProjectFileName>
+        <ProjectFileName Condition=" '$(OS)' == 'Windows_NT' AND !Exists('$(ProjectFileName)')">$([System.IO.Path]::Combine($(ProjectDir), "Obfuscar.xml"))</ProjectFileName>
 
-    <ProjectFileName Condition=" '$(OS)' != 'Windows_NT' ">$(ProjectDir)$(ProjectName).xml</ProjectFileName>
-    <ProjectFileName Condition=" '$(OS)' != 'Windows_NT' AND !Exists('$(ProjectFileName)')">$(ProjectDir)Obfuscar.xml</ProjectFileName>
+        <ProjectFileName Condition=" '$(OS)' != 'Windows_NT' ">$(ProjectDir)$(ProjectName).xml</ProjectFileName>
+        <ProjectFileName Condition=" '$(OS)' != 'Windows_NT' AND !Exists('$(ProjectFileName)')">$(ProjectDir)Obfuscar.xml</ProjectFileName>
 
-    <!-- Commands -->
-    <ObfuscateCommand>$(ObfuscatorCommand) "$(ProjectFileName)"</ObfuscateCommand>
-  </PropertyGroup>
+        <!-- Commands -->
+        <ObfuscateCommand>$(ObfuscatorCommand) "$(ProjectFileName)"</ObfuscateCommand>
+    </PropertyGroup>
 
-  <Target Name="CheckPrerequisites">
-    <!-- Raise an error if we're unable to locate Obfuscator.cli.exe  -->
-    <Error Condition="'$(DownloadObfuscatorExe)' != 'true' AND !Exists('$(ObfuscatorExePath)')" Text="Unable to locate '$(ObfuscatorExePath)'" />
-  </Target>
+    <Target Name="CheckPrerequisites">
+        <!-- Raise an error if we're unable to locate Obfuscator.cli.exe  -->
+        <Error Condition="'$(DownloadObfuscatorExe)' != 'true' AND !Exists('$(ObfuscatorExePath)')" Text="Unable to locate '$(ObfuscatorExePath)'" />
+    </Target>
 
-  <Target Name="Obfuscator" AfterTargets="AfterBuild" DependsOnTargets="CheckPrerequisites" Condition="Exists('$(ProjectFileName)') and '$(ConfigurationName)' == 'Release'">
-    <MakeDir Directories="$(TargetDir)obfuscated" />
-    <Exec WorkingDirectory="$(ProjectDir)" Command="$(ObfuscateCommand)" />
-    <ItemGroup>
-      <FilesToMove Include="$(TargetDir)obfuscated\*.*" />
-    </ItemGroup>
-    <Move SourceFiles="@(FilesToMove)" DestinationFolder="$(TargetDir)" OverwriteReadOnlyFiles="true" Condition=" '$(OS)' == 'Windows_NT'" />
-    <RemoveDir Directories="$(TargetDir)obfuscated" Condition=" '$(OS)' == 'Windows_NT'" />
-  </Target>
+    <Target Name="Obfuscator" AfterTargets="AfterBuild" DependsOnTargets="CheckPrerequisites" Condition="Exists('$(ProjectFileName)') and '$(ConfigurationName)' == 'Release'">
+        <MakeDir Directories="$(TargetDir)obfuscated" />
+        <Exec WorkingDirectory="$(ProjectDir)" Command="$(ObfuscateCommand)" />
+        <ItemGroup>
+            <FilesToMove Include="$(TargetDir)obfuscated\*.*" />
+        </ItemGroup>
+        <Move SourceFiles="@(FilesToMove)" DestinationFolder="$(TargetDir)" OverwriteReadOnlyFiles="true" Condition=" '$(OS)' == 'Windows_NT'" />
+        <RemoveDir Directories="$(TargetDir)obfuscated" Condition=" '$(OS)' == 'Windows_NT'" />
+    </Target>
 </Project>
