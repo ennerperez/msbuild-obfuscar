@@ -756,7 +756,7 @@ DerivedData/
 # Exceptions
 
 !src/.nuget
-!src/MSBuild.Obfuscar/build
-!src/MSBuild.Obfuscar/content
+!src/MSBuild.Obfuscar/build/*
+!src/MSBuild.Obfuscar/content/*
 
 # End Exceptions
