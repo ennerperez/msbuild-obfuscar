@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <Deterministic>false</Deterministic>
+        <IsPackable>false</IsPackable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.Build" Version="16.11.0" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.4" />
+        <PackageReference Include="NUnit" Version="3.13.1" />
+        <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
+        <PackageReference Include="coverlet.collector" Version="3.0.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Include="..\MSBuild.Obfuscar\Properties\AssemblyInfo.cs">
+            <Link>Properties\AssemblyInfo.cs</Link>
+        </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Examples\net2.0\net2.0.csproj" />
+      <ProjectReference Include="..\Examples\net4.0\net4.0.csproj" />
+      <ProjectReference Include="..\Examples\net5.0\net5.0.csproj" />
+      <ProjectReference Include="..\Examples\netstandard1.7\netstandard1.7.csproj" />
+      <ProjectReference Include="..\Examples\netstandard2.1\netstandard2.1.csproj" />
+    </ItemGroup>
+
+</Project>
