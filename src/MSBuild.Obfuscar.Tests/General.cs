@@ -91,6 +91,18 @@ namespace MSBuild.Obfuscar.Tests
             Obfuscar("net5.0");
         }
 
+        [Test(Description = ".NET 6.0")]
+        public void net60()
+        {
+            Obfuscar("net6.0");
+        }
+
+        [Test(Description = ".NET 7.0")]
+        public void net70()
+        {
+            Obfuscar("net7.0");
+        }
+
         [Test(Description = ".NET Standard 1.7")]
         public void netstandard17()
         {

@@ -55,9 +55,9 @@
         <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
       </PropertyGroup>
       <Error Condition="!Exists('..\..\packages\Obfuscar.2.2.35\build\obfuscar.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Obfuscar.2.2.35\build\obfuscar.props'))" />
-      <Error Condition="!Exists('..\..\packages\MSBuild.Obfuscar.2.2.35\build\MSBuild.Obfuscar.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\MSBuild.Obfuscar.2.2.35\build\MSBuild.Obfuscar.targets'))" />
+      <Error Condition="!Exists('..\..\packages\MSBuild.Obfuscar.2.2.35.1\build\MSBuild.Obfuscar.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\MSBuild.Obfuscar.2.2.35.1\build\MSBuild.Obfuscar.targets'))" />
     </Target>
-    <Import Project="..\..\packages\MSBuild.Obfuscar.2.2.35\build\MSBuild.Obfuscar.targets" Condition="Exists('..\..\packages\MSBuild.Obfuscar.2.2.35\build\MSBuild.Obfuscar.targets')" />
+    <Import Project="..\..\packages\MSBuild.Obfuscar.2.2.35.1\build\MSBuild.Obfuscar.targets" Condition="Exists('..\..\packages\MSBuild.Obfuscar.2.2.35.1\build\MSBuild.Obfuscar.targets')" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
          Other similar extension points exist, see Microsoft.Common.targets.
     <Target Name="BeforeBuild">
