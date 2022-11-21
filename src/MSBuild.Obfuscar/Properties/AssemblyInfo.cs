@@ -11,6 +11,6 @@ using System.Resources;
 [assembly: AssemblyCompany("Enner Pérez")]
 [assembly: AssemblyProduct("MSBuild.Obfuscar")]
 [assembly: AssemblyCopyright("Copyright (C) 2022")]
-[assembly: AssemblyVersion("2.2.35.0")]
-[assembly: AssemblyFileVersion("2.2.35.0")]
+[assembly: AssemblyVersion("2.2.35.1")]
+[assembly: AssemblyFileVersion("2.2.35.1")]
 [assembly: NeutralResourcesLanguage("en")]
