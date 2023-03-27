@@ -24,7 +24,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Examples\net2.0\net2.0.csproj" />
       <ProjectReference Include="..\Examples\net4.0\net4.0.csproj" />
       <ProjectReference Include="..\Examples\net5.0\net5.0.csproj" />
       <ProjectReference Include="..\Examples\netstandard1.7\netstandard1.7.csproj" />

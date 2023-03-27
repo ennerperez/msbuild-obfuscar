@@ -72,13 +72,6 @@ namespace MSBuild.Obfuscar.Tests
                 Assert.Fail();
         }
 
-
-        [Test(Description = ".NET Framework 2.0")]
-        public void net20()
-        {
-            Obfuscar("net2.0");
-        }
-
         [Test(Description = ".NET Framework 4.0")]
         public void net40()
         {
