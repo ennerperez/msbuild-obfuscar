@@ -10,7 +10,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="MSBuild.Obfuscar" Version="2.2.35.1">
+        <PackageReference Include="MSBuild.Obfuscar" Version="2.2.49">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>

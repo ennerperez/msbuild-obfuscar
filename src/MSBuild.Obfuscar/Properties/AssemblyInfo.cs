@@ -10,7 +10,7 @@ using System.Resources;
 #endif
 [assembly: AssemblyCompany("Enner Pérez")]
 [assembly: AssemblyProduct("MSBuild.Obfuscar")]
-[assembly: AssemblyCopyright("Copyright (C) 2022")]
-[assembly: AssemblyVersion("2.2.35.1")]
-[assembly: AssemblyFileVersion("2.2.35.1")]
+[assembly: AssemblyCopyright("Copyright (C) 2025")]
+[assembly: AssemblyVersion("2.2.49")]
+[assembly: AssemblyFileVersion("2.2.49")]
 [assembly: NeutralResourcesLanguage("en")]
