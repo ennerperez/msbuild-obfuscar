@@ -95,6 +95,18 @@ namespace MSBuild.Obfuscar.Tests
         {
             Obfuscar("net7.0");
         }
+        
+        [Test(Description = ".NET 8.0")]
+        public void net80()
+        {
+            Obfuscar("net8.0");
+        }
+        
+        [Test(Description = ".NET 9.0")]
+        public void net90()
+        {
+            Obfuscar("net9.0");
+        }
 
         [Test(Description = ".NET Standard 1.7")]
         public void netstandard17()
